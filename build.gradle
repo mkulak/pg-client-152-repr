@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: 'java'
+
+defaultTasks "run"
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'io.reactiverse:reactive-pg-client:0.10.6'
+
+    testCompile "junit:junit:4.11"
+    testCompile group: "io.vertx", name: "vertx-unit", version: "3.5.4"
+    testCompile group: 'org.testcontainers', name: 'postgresql', version: '1.9.1'
+    testCompile 'org.postgresql:postgresql:42.0.0'
+    testCompile 'com.zaxxer:HikariCP-java6:2.3.8'
+}
+
